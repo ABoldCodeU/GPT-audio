@@ -18,7 +18,7 @@ const openai = new OpenAIApi({
 module.exports = {
 
 
-    convertTxtToAudio: async function (model, voice, format, input) {
+    convertTxtToAudio: async function (model, voice, format, input, res) {
         try {
             const speechFile = path.resolve("./speech."+format);
 
@@ -39,6 +39,7 @@ module.exports = {
 
         catch (error) {
             console.log(error.message)
+            res.status(500).json({ error: error.message });
             return false;
         }
     }
