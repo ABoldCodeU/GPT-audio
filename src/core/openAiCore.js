@@ -20,7 +20,7 @@ module.exports = {
 
     convertTxtToAudio: async function (model, voice, format, input, res) {
         try {
-            const speechFile = path.resolve("./speech."+format);
+            const speechFile = path.resolve(__dirname +"/../../speech."+format);
 
             const mp3 = await openai.audio.speech.create({
                 model: model, //tipo de modelo One of the available TTS models: tts-1 or tts-1-hd
