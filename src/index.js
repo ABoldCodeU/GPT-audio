@@ -28,10 +28,10 @@ app.get('/', async (req, res) => {
 
 app.get('/convertTextToAudio', async (req, res) => {
     try {
-        const model = req.query.model
-        const voice = req.query.voice
-        const format = req.query.format
-        const input = req.query.input
+        const model = req.body.model
+        const voice = req.body.voice
+        const format = req.body.format
+        const input = req.body.input
         console.log(model);
         console.log(voice);
         console.log(format);
