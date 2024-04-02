@@ -55,7 +55,7 @@ app.get('/convertTextToAudio', async (req, res) => {
                         const result = await openAiCore.convertTxtToAudio(model, voice, format, input);
                         if (result) {
 
-                            const filePath = path.resolve("./speech." + format);
+                            const filePath = path.resolve(__dirname +"/../speech." + format);
 
                             // Verificar si el archivo existe
                             fs.access(filePath, fs.constants.F_OK, (err) => {
@@ -72,7 +72,7 @@ app.get('/convertTextToAudio', async (req, res) => {
                                 res.sendFile(filePath);
                             });
                         } else {
-                            res.status(500).json({ error: "Ha ocurrido un error con la conversion" });
+                            //res.status(500).json({ error: "Ha ocurrido un error con la conversion" });
                         }
                     }
 
