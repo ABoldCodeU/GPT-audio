@@ -37,9 +37,9 @@ module.exports = {
             return true
         }
 
-        catch (error) {
-            console.log(error.message)
-            res.status(500).json({ error: error.message });
+         catch (errorconsole) {
+            console.log(errorconsole.message)
+            res.status(500).json({ error: errorconsole });
             return false;
         }
     }
